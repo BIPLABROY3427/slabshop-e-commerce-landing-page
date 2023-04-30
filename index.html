@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slabshop</title>
+    <link rel="shortcut icon"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABO0lEQVR4Ae3WgUdDURTH8WcLIRFAVUoKAjVQEVMogYBCESIqTIQIQR4CgQwM+hsiUjxUMkQUkSEShTyYWL++eMgU3HN7g+EDDny57nECSQ315yAMQxc9KGC8fpZGwDweIaymHbAC/TCSZsAQYihxjkyaAQdQIsYogjQDriCUkUPwXwFtyGESAwgSc8gji17MYBbDvgJasIMKlKjiDMsYxCIu8AklarjEtCWgHSeQQQ3rrgElyIPQJWAC8mDP9QmOIKMysq4BN5DRluUXPENGU5aAV8gobwl4gow2LAERZBRZAoqQBwXXgAXIgy/sugR04AXyoOq6ig8hD95dA/rxARmV3AKAbcjgDX2WgAxOIUdLPi6iTtxBdWLcowL9Yt/nSdaFYzwgwia6kUUrxlDELa6xZjrJ0tIMaAZ8A6GRaKMmbbcuAAAAAElFTkSuQmCC"
+        type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .center,
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .maincontent {
+            width: 100%;
+            max-width: 1200px
+        }
+
+        header {
+            width: 100%
+        }
+
+        .navhead {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%
+        }
+
+        .headborder,
+        nav {
+            flex-direction: row;
+            display: flex;
+            width: 100%
+        }
+
+        .headborder {
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            background: #212121
+        }
+
+        nav {
+            align-items: center
+        }
+
+        .headborder1,
+        .headborder2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 16px
+        }
+
+        .headborder p,
+        .pikatext p:first-child {
+            font-family: Inter;
+            font-style: normal;
+            align-items: center;
+            display: flex
+        }
+
+        .headborder p {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            color: #fff
+        }
+
+        .Category:hover,
+        .headborder p:hover,
+        .location img:nth-child(3),
+        .nav2 img {
+            cursor: pointer
+        }
+
+        .pikatext p:first-child {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #212121
+        }
+
+        .headercat1 p,
+        .pikatext p:nth-child(2),
+        .searchbg input {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400
+        }
+
+        .pikatext p:nth-child(2) {
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            color: #129a00
+        }
+
+        .nav1,
+        .nav1 .nav1-1 {
+            flex-direction: row;
+            display: flex
+        }
+
+        .nav1 {
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            flex-grow: 1
+        }
+
+        .nav2 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+            justify-content: flex-end
+        }
+
+        .nav1 .nav1-1 {
+            justify-content: center;
+            align-items: center
+        }
+
+        .nav1-2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-grow: 2
+        }
+
+        .logo {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 8px;
+            flex-direction: row
+        }
+
+        .Category,
+        .searchbg {
+            display: flex;
+            flex-direction: row;
+            padding: 8px 16px
+        }
+
+        .searchbg {
+            justify-content: center;
+            align-items: center;
+            background: #fcfcfc;
+            border: 1px solid #e2e2e2;
+            border-radius: 6px;
+            width: 100%
+        }
+
+        .Category {
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            width: 116px;
+            height: 38px;
+            background: #52057b;
+            border-radius: 8px;
+            color: #fff
+        }
+
+        .navprofile,
+        .pikatext {
+            height: 35px;
+            display: flex
+        }
+
+        .navprofile {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 100px
+        }
+
+        .pikatext {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            width: 55px
+        }
+
+        .searchbg input {
+            font-size: 14px;
+            line-height: 17px;
+            display: flex;
+            align-items: center;
+            color: #828282;
+            border: 0;
+            outline: 0;
+            width: 100%
+        }
+
+        .headercat,
+        .location {
+            flex-direction: row;
+            width: 100%;
+            display: flex
+        }
+
+        .nav1-2 select option {
+            color: #fff;
+            outline: 0
+        }
+
+        .location {
+            align-items: center;
+            gap: 8px;
+            height: 38px;
+            align-self: stretch
+        }
+
+        .headercat {
+            box-sizing: border-box;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #d1d1d1
+        }
+
+        .headercat1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            float: left
+        }
+
+        .headercat1 p {
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            color: #31353b
+        }
+
+        .headercat1-1 {
+            display: flex
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <!-- <section class="topnav">
+            <div class="topnavr1">
+                <p>Open Sponsorship</p>
+                <p>Call Center</p>
+                <p>Help</p>
+                <p>Tutorial</p>
+            </div>
+            <div class="topnavr2">
+                <p>Be Partners</p>
+                <p>Open Shop</p>
+                <div class="flex">
+                    <p>Download</p>
+                    <img src="assets/image/downarrowwhite.png" alt="Image Cant Load">
+                </div>
+                <div class="flex">
+                    <p>English</p>
+                    <img src="assets/image/downarrowwhite.png" alt="Image Cant Load">
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <nav>
+                <div class="center">
+                    <img class="navprofileimg" src="https://source.unsplash.com/random/332x332/?profile"
+                        alt="Image Can't Load">
+                    <p class="navspaceleft ">Slabshop</p>
+                </div>
+                <div class="navlocation center">
+                    <img src="assets/image/location.png" alt="Image Can't Load">
+                    <p>India, Delhi</p>
+                    <img src="assets/image/dropdownsrrow.png" alt="Image Can't Load">
+                </div>
+                <div class="navsearch center">
+                    <input type="search" placeholder="Search in Slabshop">
+                    <img class="navspaceleft" src="assets/image/search.png" alt="Image Can't Load">
+                </div>
+                <div class="navcategory center">
+                    <select name="Category">
+                        <option value="Category">Category</option>
+                        <option value="Purchase">Purchase</option>
+                    </select>
+                </div>
+                <div class="navicons center">
+                    <img src="assets/image/noti.png" alt="Image Can't Load">
+                    <img src="assets/image/navshop.png" alt="Image Can't Load">
+                    <img src="assets/image/navlock.png" alt="Image Can't Load">
+                </div>
+                <div class="navlast">
+                    <img class="navprofileimg" src="https://source.unsplash.com/random/332x332/?nature"
+                        alt="Image Can't Load">
+                    <div class="pikatext navspaceleft ">
+                        <p>Pikachu</p>
+                        <p>Online</p>
+                    </div>
+                </div>
+            </nav>
+            <div class="navmenu">
+                <div class="nav-menu-contant">
+                    <p>Popular Search :</p>
+                    <p>Fashion</p>
+                    <p>Shoes Man</p>
+                    <p>Gadget</p>
+                    <p>Computer</p>
+                    <p>Laptop</p>
+                    <p>Flash Sale</p>
+                    <p>Accessories</p>
+                </div>
+                <div class="navhide">
+                    <p>Hide</p>
+                    <img src="assets/image/dropdownsrrow.png" alt="Image Can't Load">
+                </div>
+            </div>
+        </section> -->
+
+        <header>
+            <div class="navhead">
+                <div class="headborder">
+                    <div class="headborder1">
+                        <p>Open Sponsorship</p>
+                        <p>Call Center</p>
+                        <p>Help</p>
+                        <P>Tutorial</P>
+                    </div>
+                    <div class="headborder2">
+                        <p>Be Partners</p>
+                        <p>Open Shop</p>
+                        <div class="doenloadbg center">
+                            <p>Download</p>
+                            <img src="assets/image/downarrowwhite.png" alt="Image Cant Load">
+                        </div>
+                        <div class="englishbg center">
+                            <p>English</p>
+                            <img src="assets/image/downarrowwhite.png" alt="Image Cant Load">
+                        </div>
+                    </div>
+                </div>
+                <nav>
+                    <div class="nav1">
+                        <div class="logo">
+                            <img src="assets/image/profileimg.png" alt="Image Cant Load">
+                            <p>Slabshop</p>
+                        </div>
+                        <div class="location">
+                            <img src="assets/image/location.png" alt="Image Cant Load">
+                            <p>india, delhi</p>
+                            <img src="assets/image/dropdownsrrow.png" alt="Image Cant Load">
+                        </div>
+                    </div>
+                    <div class="nav1-2">
+                        <div class="searchbg">
+                            <input type="text" placeholder="Search in Slabshop">
+                            <img src="assets/image/search.png" alt="Image Cant Load">
+                        </div>
+                        <select class="Category" name="category" id="category">
+                            <option value="Category">Category</option>
+                            <option value="Purchase">Purchase</option>
+                        </select>
+                        <img src="assets/image/downarrowwhite.png" alt="Image Cant Load">
+                    </div>
+                    <div class="nav2">
+                        <img src="assets/image/noti.png" alt="Image Cant Load">
+                        <img src="assets/image/navshop.png" alt="Image Cant Load">
+                        <img src="assets/image/navlock.png" alt="Image Cant Load">
+                        <div class="navprofile">
+                            <img src="assets/image/profileimg.png" alt="Image Cant Load">
+                            <div class="pikatext">
+                                <p>Pikachu</p>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="headercat">
+                    <div class="headercat1">
+                        <p>Popular Search</p>
+                        <p>:</p>
+                        <div class="headercat1-1">
+                            <p>Fashion</p>
+                            <p>Shoes Man</p>
+                            <p>Gadget</p>
+                            <p>Computer</p>
+                            <p>Laptop</p>
+                            <p>Flash Sale</p>
+                            <p>Accessories</p>
+                        </div>
+                    </div>
+                    <div class="headercat2"></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="banner1">
+            <div class="row1">
+                <div class="ban1-col col-2">
+                    <img src="https://source.unsplash.com/random/332x332/?macbookpro" alt="Image Can't Load">
+                </div>
+                <div class="ban1-col2 col-10">
+                    <img style="object-fit: initial;" src="assets/image/banner.jpg" alt="Image Can't Load">
+                </div>
+            </div>
+            <div class="row2">
+                <div class="row2-1">
+                    <div class="row2-1-1"></div>
+                    <div class="row2-1-2"></div>
+                    <div class="row2-1-2"></div>
+                    <div class="row2-1-2"></div>
+                </div>
+                <div class="row2-2">
+                    <img src="assets/image/leftarrow.png" alt="Image Can't Load">
+                    <p>Back</p>
+                    <p>Next</p>
+                    <img src="assets/image/rightarrow.png" alt="Image Can't Load">
+                </div>
+            </div>
+        </section>
+        <section class="banner2">
+            <div class="row1 col-2"> <img src="https://source.unsplash.com/random/332x297/?Bills-and-Utility"
+                    alt="Image Can't Load"></div>
+            <div class="row2">
+                <div class="row2-title">
+                    <p>Bills and Utility</p>
+                    <div class="center">
+                        <p>See All</p>
+                        <img src="assets/image/next.svg" alt="Image Can't Load">
+                    </div>
+                </div>
+                <div class="row2-nav">
+                    <p>Balance</p>
+                    <p>Top Up</p>
+                    <p>Internet</p>
+                    <p>Electricity Tokens</p>
+                    <p>Tickets</p>
+                    <p>Data Package</p>
+                    <p>Pulse</p>
+                    <p>Voucher</p>
+                </div>
+                <div class="row2-1">
+                    <div class="row2-col1 col-6">
+                        <p>Code Transaction</p>
+                        <div class="inputborder">
+                            <input type="text" placeholder="Ex: 276NHVF387XN3487">
+                        </div>
+
+                    </div>
+                    <div class="row2-col2 col-6">
+                        <p>Payment Amount</p>
+                        <div class="inputborder">
+                            <input type="text" placeholder="Ex : $100.000">
+                        </div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button>
+                        Purchase<img src="assets/image/rightwhiteicon.png" alt="Image Can't Load">
+                    </button>
+                    <div class="center">
+                        <p>Help!</p>
+                        <img src="assets/image/Help!.png" alt="Image Can't Load">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner3">
+            <p>Choice Category</p>
+            <div class="categorylist">
+                <div class="row">
+                    <div class="center"><img src="assets/image/ManFashion.png" alt="Image Can't Load"></div>
+                    <p>Man Fashion</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/gadget.png" alt="Image Can't Load"></div>
+                    <p>Gadget Electronic</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/VoucherGame.png" alt="Image Can't Load"></div>
+                    <p>Voucher Game</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/Property.png" alt="Image Can't Load"></div>
+                    <p>Property</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/KidsFashion.png" alt="Image Can't Load"></div>
+                    <p>Kids Fashion</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/Computer&Laptop.png" alt="Image Can't Load"></div>
+                    <p>Computer & Laptop</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/WomanFashion.png" alt="Image Can't Load"></div>
+                    <p>Woman
+                        Fashion</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/Sports.png" alt="Image Can't Load"></div>
+                    <p>Sports</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/Gaming.png" alt="Image Can't Load"></div>
+                    <p>Gaming</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/Film&Music.png" alt="Image Can't Load"></div>
+                    <p>Film & Music</p>
+                </div>
+                <div class="row">
+                    <div class="center"><img src="assets/image/ViewAll.png" alt="Image Can't Load"></div>
+                    <p>View All</p>
+                </div>
+            </div>
+
+        </section>
+        <section class="banner4">
+            <div class="product-sale">
+                <div class="sale-title">
+                    <div class="bg4titleee">
+                        <p>November Super Flash Sale ⚡</p>
+                    </div>
+                    <div class="offerend-time">
+                        <p>Ends in</p>
+                        <div class="timecount-down center">
+                            <div class="hour">
+                                <p>04</p>
+                            </div>
+                            <p>:</p>
+                            <div class="min">
+                                <p>24</p>
+                            </div>
+                            <p>:</p>
+                            <div class="sec">
+                                <p>39</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offer-products">
+                <div class="row">
+                    <div class="imagebg center">
+                        <img src="assets/image/sale1.png" alt="Image Can't Load">
+                    </div>
+                    <div class="contentsbg">
+                        <div class="con1">
+                            <p>Property</p>
+                            <p>Durable tupperware bottles (Black Version)</p>
+                        </div>
+                        <div class="con2">
+                            <div class="prouct-pricetbl">
+                                <p><del>$20.00</del> $10.00</p>
+                                <div class="offpercentage">
+                                    <p>-50%</p>
+                                </div>
+                            </div>
+                            <div class="con2-1">
+                                <div class="con2-1-rate">
+                                    <div class="ratebg">
+                                        <div class="rateingber" style="width: 76px;"></div>
+                                    </div>
+                                </div>
+                                <div class="con2-1-sold">
+                                    <p>120 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="imagebg center">
+                        <img src="assets/image/sale2.png" alt="Image Can't Load">
+                    </div>
+                    <div class="contentsbg">
+                        <div class="con1">
+                            <p>Electronic</p>
+                            <p>Youth The Child Bluetooth Headphones</p>
+                        </div>
+                        <div class="con2">
+                            <div class="prouct-pricetbl">
+                                <p><del>$35.00</del> $15.00</p>
+                                <div class="offpercentage">
+                                    <p>-45%</p>
+                                </div>
+                            </div>
+                            <div class="con2-1">
+                                <div class="con2-1-rate">
+                                    <div class="ratebg">
+                                        <div class="rateingber" style="width: 119px;"></div>
+                                    </div>
+                                </div>
+                                <div class="con2-1-sold">
+                                    <p>320 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="imagebg center">
+                        <img src="assets/image/sale3.png" alt="Image Can't Load">
+                    </div>
+                    <div class="contentsbg">
+                        <div class="con1">
+                            <p>Property</p>
+                            <p>CTRL brand tupperware bottles</p>
+                        </div>
+                        <div class="con2">
+                            <div class="prouct-pricetbl">
+                                <p><del>$86.40 </del> $42.75</p>
+                                <div class="offpercentage">
+                                    <p>-58%</p>
+                                </div>
+                            </div>
+                            <div class="con2-1">
+                                <div class="con2-1-rate">
+                                    <div class="ratebg">
+                                        <div class="rateingber" style="width: 35px;"></div>
+                                    </div>
+                                </div>
+                                <div class="con2-1-sold">
+                                    <p>90 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="imagebg center">
+                        <img src="assets/image/sale4.png" alt="Image Can't Load">
+                    </div>
+                    <div class="contentsbg">
+                        <div class="con1">
+                            <p>Automotive</p>
+                            <p>Miniature hotwheels black sports</p>
+                        </div>
+                        <div class="con2">
+                            <div class="prouct-pricetbl">
+                                <p><del>$52.25 </del> $26.67</p>
+                                <div class="offpercentage">
+                                    <p>-60%</p>
+                                </div>
+                            </div>
+                            <div class="con2-1">
+                                <div class="con2-1-rate">
+                                    <div class="ratebg">
+                                        <div class="rateingber" style="width: 126px;"></div>
+                                    </div>
+                                </div>
+                                <div class="con2-1-sold">
+                                    <p>180 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="imagebg center">
+                        <img src="assets/image/sale5.png" alt="Image Can't Load">
+                    </div>
+                    <div class="contentsbg">
+                        <div class="con1">
+                            <p>Electronic</p>
+                            <p>Headphone Super Bass Stereo High Quality</p>
+                        </div>
+                        <div class="con2">
+                            <div class="prouct-pricetbl">
+                                <p><del>$49.99</del>$40.04</p>
+                                <div class="offpercentage">
+                                    <p>-20%</p>
+                                </div>
+                            </div>
+                            <div class="con2-1">
+                                <div class="con2-1-rate">
+                                    <div class="ratebg">
+                                        <div class="rateingber" style="width: 84px;"></div>
+                                    </div>
+                                </div>
+                                <div class="con2-1-sold">
+                                    <p>130 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="imagebg center">
+                        <img src="assets/image/sale6.png" style="height: 150px;" alt="Image Can't Load">
+                    </div>
+                    <div class="contentsbg">
+                        <div class="con1">
+                            <p>Outdoor Plants</p>
+                            <p>Aloe Vera Mini Ornamental Plant</p>
+                        </div>
+                        <div class="con2">
+                            <div class="prouct-pricetbl">
+                                <p><del>$19.50</del>$17.60</p>
+                                <div class="offpercentage">
+                                    <p>-9%</p>
+                                </div>
+                            </div>
+                            <div class="con2-1">
+                                <div class="con2-1-rate">
+                                    <div class="ratebg">
+                                        <div class="rateingber" style="width: 111px;"></div>
+                                    </div>
+                                </div>
+                                <div class="con2-1-sold">
+                                    <p>12 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner5">
+            <div class="row1">
+                <div class="column1">
+                    <p>Now Easier to Choose</p>
+                    <div class="column1-1 hover">
+                        <p>New Features</p>
+                    </div>
+                </div>
+                <div class="column2">
+                    <div class="rowss hover" style="background: linear-gradient(90deg, #BF5AE0 0%, #A811DA 100%);">
+                        <div class="rowsscolumnn">
+                            <div class="rowscol1">
+                                <div class="rowscol1-1">
+                                    <img src="assets/image/newfeature1.png" alt="">
+                                </div>
+                                <p>Popular Product</p>
+                            </div>
+                            <div class="rowcol2">
+                                <p>Product</p>
+                                <p>341 Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowss hover" style="background: linear-gradient(90deg, #06BEB6 0%, #48B1BF 100%);">
+                        <div class="rowsscolumnn">
+                            <div class="rowscol1">
+                                <div class="rowscol1-1">
+                                    <img src="assets/image/newfeature2.png" alt="">
+                                </div>
+                                <p>Most Wanted</p>
+                            </div>
+                            <div class="rowcol2">
+                                <p>Product</p>
+                                <p>162 Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowss hover" style="background: linear-gradient(90deg, #F85032 0%, #E73827 100%);">
+                        <div class="rowsscolumnn">
+                            <div class="rowscol1">
+                                <div class="rowscol1-1">
+                                    <img src="assets/image/newfeature3.png" alt="">
+                                </div>
+                                <p>Top Fashion 2023</p>
+                            </div>
+                            <div class="rowcol2">
+                                <p>Product</p>
+                                <p>228 Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowss hover" style="background: linear-gradient(90deg, #FE8C00 0%, #F83600 100%);">
+                        <div class="rowsscolumnn">
+                            <div class="rowscol1">
+                                <div class="rowscol1-1">
+                                    <img src="assets/image/newfeature4.png" alt="">
+                                </div>
+                                <p>Bestseller</p>
+                            </div>
+                            <div class="rowcol2">
+                                <p>Product</p>
+                                <p>422 Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowss hover" style="background: linear-gradient(90deg, #F857A6 0%, #FF5858 100%);">
+                        <div class="rowsscolumnn">
+                            <div class="rowscol1">
+                                <div class="rowscol1-1">
+                                    <img src="assets/image/newfeature5.png" alt="">
+                                </div>
+                                <p>Best Shop 2023</p>
+                            </div>
+                            <div class="rowcol2">
+                                <p>Product</p>
+                                <p>52 Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bn5-border"></div>
+            <div class="row2">
+                <div class="row-2 hover">
+                    <div class="row-2-1">
+                        <div class="row-2-1-vline" style="background: #0052D4;"></div>
+                        <p>The goods are ready stock and ready to be shipped</p>
+                    </div>
+                    <div class="row-2-2">
+                        <div class="row-2-2-1"></div>
+                        <div class="row-2-2-1"></div>
+                    </div>
+                </div>
+                <div class="row-2 hover">
+                    <div class="row-2-1">
+                        <div class="row-2-1-vline" style="background: #EC008C;"></div>
+                        <p>New items for those of you who want to pre order</p>
+                    </div>
+                    <div class="row-2-2">
+                        <div class="row-2-2-1"></div>
+                        <div class="row-2-2-1"></div>
+                    </div>
+                </div>
+                <div class="row-2 hover">
+                    <div class="row-2-1">
+                        <div class="row-2-1-vline" style="background: #892CDC;"></div>
+                        <p>The top second hand items available here</p>
+                    </div>
+                    <div class="row-2-2">
+                        <div class="row-2-2-1"></div>
+                        <div class="row-2-2-1"></div>
+                    </div>
+                </div>
+                <div class="row-2 hover">
+                    <div class="row-2-1">
+                        <div class="row-2-1-vline" style="background: #E73827;"></div>
+                        <p>You can get all free shipping products here</p>
+                    </div>
+                    <div class="row-2-2">
+                        <div class="row-2-2-1"></div>
+                        <div class="row-2-2-1"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner6">
+            <p>Today Is Only For You</p>
+            <div class="row">
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/l1jmc280/computer/d/u/f/g533zw-ln136ws-gaming-laptop-asus-original-imagd39725zjzt5v.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Computer & Laptop</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">ASUS ROG Strix SCAR 15 Core i9 12th Gen</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹2,74,990</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.7</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Sonia Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>390 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/ks7tuvk0/keyboard/laptop-keyboard/b/7/z/mk293ll-a-magic-keyboard-with-touch-id-apple-original-imag5ttav5gt3mex.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Computer & Laptop</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">APPLE MK293HN/A Bluetooth Laptop Keyboard (White, Silver)
+                                </p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹13,499</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.4</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Anand Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>576 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/kumzpu80/shoe/z/b/g/7-msflfir6-7-5-new-balance-pink-original-imag7qyjzesdvstr.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Fashion Man</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">MSFLFIR6 Football Shoes For Men (Black)</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹27,999</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.9</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Mayur Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>87 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/kljrvrk0/internal-hard-drive/l/j/p/mz-v8p2t0bw-samsung-original-imagynp3jhgcbhht.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Gudget Electronic</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">SAMSUNG 980 Pro 2 TB Laptop</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹19,999</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.5</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Vasant Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>876 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/shirt/z/v/q/xl-751562202-jkd-original-imagzhafgvkhf6eg.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Fashion</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Men Regular Fit Solid Casual Shirt</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹7,500</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.8</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Yamuna Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>658 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/krz97rk0/watch/u/h/5/g652-casio-original-imag5n4mhkkgr9hz.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Sports</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">G-Shock ( GWG-1000-1A3DR ) Analog-Digital Watch - For Men
+                                    G652</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹46,695</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>3.9</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Saraswati Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>1 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/krntoy80/ethnic-set/h/8/z/m-kp-04-sonika-fashion-point-original-imag5egqedpk42yp.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Woman Fashion</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Women Kurta and Pant Set Pure Cotton</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹2,890</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>3.7</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Vivek Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>1254 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/usb-gadget/t/a/2/usb-c-hub-multiport-adapter-compatible-with-laptop-ruhza-original-imagz336xbwvqunn.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Accessories</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">RuhZa 12 in 1 USB C Hub, USB C Docking Station USB C</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹12,999</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.7</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Sarita Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>5 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/kxf0jgw0/motion-controller/h/t/i/vr-gran-tourismo-bundle-playstation-original-imag9vd9vvfrat9c.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Gaming</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Playstation VR Gran Tourismo Bundle Motion Controller</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹39,990</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.1</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Nirman Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>5 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/kyj0vbk0/office-study-chair/a/w/1/77-leatherette-1-ultron-durian-136-original-imagaqqnqvgztbz4.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Property</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Durian Ultron Ultron Ergonomic Multi Functional with
+                                    Comfortable Gaming Chair</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹21,420</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.8</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Yozna Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>987 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner7">
+            <div class="row1"></div>
+            <div class="row2">
+                <p class="bn7title">Best Shop at The Moment</p>
+                <div class="row2-1">
+                    <div class="rowcolumn hover">
+                        <div class="columnss1">
+                            <div class="columnsss-1"></div>
+                            <div class="columnscircle">
+                                <img style="width: 100%; object-fit: scale-down; overflow: hidden; border-radius: 50%;"
+                                    src="https://source.unsplash.com/random/500x500/?india" alt="Image Can't Load">
+                            </div>
+                        </div>
+                        <div class="columnss2">
+                            <div class="colmnsns1">
+                                <div class="dkk center">
+                                    <p>Super Shop</p>
+                                </div>
+                                <div class="veryfycol center">
+                                    <p>Verification</p>
+                                    <img src="assets/image/varified.png" alt="Image Cant Loaded">
+                                </div>
+                            </div>
+                            <div class="columnss4">
+                                <div class="ban7Productbg">
+                                    <p>Product</p>
+                                    <p>1,264</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Followedbg">
+                                    <p>Followed</p>
+                                    <p>5,325</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Soldbg">
+                                    <p>Sold</p>
+                                    <p>5,264</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowcolumn hover">
+                        <div class="columnss1">
+                            <div class="columnsss-1"></div>
+                            <div class="columnscircle">
+                                <img style="width: 100%; object-fit: scale-down; overflow: hidden; border-radius: 50%;"
+                                    src="https://source.unsplash.com/random/500x500/?Super-Shop" alt="Image Can't Load">
+                            </div>
+                        </div>
+                        <div class="columnss2">
+                            <div class="colmnsns1">
+                                <div class="dkk center">
+                                    <p>Nine Fashion</p>
+                                </div>
+                                <div class="veryfycol center">
+                                    <p>Verification</p>
+                                    <img src="assets/image/varified.png" alt="Image Cant Loaded">
+                                </div>
+                            </div>
+                            <div class="columnss4">
+                                <div class="ban7Productbg">
+                                    <p>Product</p>
+                                    <p>5,264</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Followedbg">
+                                    <p>Followed</p>
+                                    <p>6,352</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Soldbg">
+                                    <p>Sold</p>
+                                    <p>8,356</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowcolumn hover">
+                        <div class="columnss1">
+                            <div class="columnsss-1"></div>
+                            <div class="columnscircle"><img
+                                    style="width: 100%; object-fit: scale-down; overflow: hidden; border-radius: 50%;"
+                                    src="https://source.unsplash.com/random/500x500/?Fashion" alt="Image Can't Load">
+                            </div>
+                        </div>
+                        <div class="columnss2">
+                            <div class="colmnsns1">
+                                <div class="dkk center">
+                                    <p>Utopia Store</p>
+                                </div>
+                                <div class="veryfycol center">
+                                    <p>Verification</p>
+                                    <img src="assets/image/varified.png" alt="Image Cant Loaded">
+                                </div>
+                            </div>
+                            <div class="columnss4">
+                                <div class="ban7Productbg">
+                                    <p>Product</p>
+                                    <p>4,973</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Followedbg">
+                                    <p>Followed</p>
+                                    <p>2,834</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Soldbg">
+                                    <p>Sold</p>
+                                    <p>3,836</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowcolumn hover">
+                        <div class="columnss1">
+                            <div class="columnsss-1"></div>
+                            <div class="columnscircle">
+                                <img style="width: 100%; object-fit: scale-down; overflow: hidden; border-radius: 50%;"
+                                    src="https://source.unsplash.com/random/500x500/?Utopia-Store"
+                                    alt="Image Can't Load">
+                            </div>
+                        </div>
+                        <div class="columnss2">
+                            <div class="colmnsns1">
+                                <div class="dkk center">
+                                    <p>Music Zerna</p>
+                                </div>
+                                <div class="veryfycol center">
+                                    <p>Verification</p>
+                                    <img src="assets/image/varified.png" alt="Image Cant Loaded">
+                                </div>
+                            </div>
+                            <div class="columnss4">
+                                <div class="ban7Productbg">
+                                    <p>Product</p>
+                                    <p>2,736</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Followedbg">
+                                    <p>Followed</p>
+                                    <p>3,345</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Soldbg">
+                                    <p>Sold</p>
+                                    <p>2,132</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowcolumn hover">
+                        <div class="columnss1">
+                            <div class="columnsss-1"></div>
+                            <div class="columnscircle"><img
+                                    style="width: 100%; object-fit: scale-down; overflow: hidden; border-radius: 50%;"
+                                    src="https://source.unsplash.com/random/500x500/?Music-Zerna"
+                                    alt="Image Can't Load"></div>
+                        </div>
+                        <div class="columnss2">
+                            <div class="colmnsns1">
+                                <div class="dkk center">
+                                    <p>Amara Glow</p>
+                                </div>
+                                <div class="veryfycol center">
+                                    <p>Verification</p>
+                                    <img src="assets/image/varified.png" alt="Image Cant Loaded">
+                                </div>
+                            </div>
+                            <div class="columnss4">
+                                <div class="ban7Productbg">
+                                    <p>Product</p>
+                                    <p>5,083</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Followedbg">
+                                    <p>Followed</p>
+                                    <p>4,084</p>
+                                </div>
+                                <div class="ban7profiline"></div>
+                                <div class="banner7Soldbg">
+                                    <p>Sold</p>
+                                    <p>3,376</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner6">
+            <p>Our Recommendation For You</p>
+            <div class="row">
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/mobile/k/s/t/-original-imaghxengzjc2djt.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Mobile Phones</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">APPLE iPhone 14 Pro Max (Silver, 1 TB)</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹1,77,999</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.7</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>New Delhi</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>987 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/tablet/l/1/d/-original-imagj73ytqpahjcj.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Mobile Phones</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">APPLE iPad Pro (6th Gen) 2 TB ROM 12.9 inch with Wi-Fi+5G
+                                    (Space Grey)</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹2,36,900</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>3.5</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Central District</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>1 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/kzblocw0/shoe/o/t/e/11-mstpfvc2-11-5-new-balance-vision-blue-original-imagbcruwec6qeh3.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Fashion Man</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Takela Football Shoes For Men (Blue)</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹21,599</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>3.7</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>West District</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>67 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/ktbu6q80/usb-gadget/u/z/b/charging-station-for-multiple-devices-60w-12a-7-ports-desktop-original-imag6p4gryfzzhvb.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Gudget Electronic</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Soopii 7 Port Charging Station with 1 Type-c Port with
+                                    7pcs USB Cables</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹4,999</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.2</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Vasant Vihar</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>9 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/kskotjk0/fabric/r/q/y/yes-2-5-m-semi-stitched-2-2-m-fb-f-f1349-fashion-basket-original-imag63x8pmhzzrna.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Fashion</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Semi Stitched Georgette Gown/Anarkali Kurta & Bottom
+                                    Material Embroidered</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹488</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.1</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>New Delhi District</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>876 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/milk-drink-mix/f/o/n/-original-imagjtcznavu7dth.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Sports</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Boost Chocolate Energy & Sports Nutrition Drink Refill
+                                    pack (750 g)</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹378</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>3.5</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>Shahdara District</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>1484 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/kurta/n/4/q/xxl-morni-straight-kurti-06-purple-nice-look-fashion-original-imagn4hgrrvfnssh.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Woman Fashion</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Women Embroidered Cotton Rayon Straight Kurta (Purple)
+                                </p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹488</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.1</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>North-West District</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>560 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/kyj0vbk0/air-freshener/d/k/l/-original-imagaqhg57wasbmg.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Accessories</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Godrej Aer Twist Fresh Forest Drizzle Car Freshener (45
+                                    g)</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹340</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.1</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>North District</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>1 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/computer/z/c/p/-original-imagz42ugkyzeaez.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Gaming</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">ASUS ROG Zephyrus Duo 16 Ryzen 9 16 Core 7945HX</p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹4,29,990</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.1</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>South-West District</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>1 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowl hover">
+                    <div class="columns">
+                        <div class="colbg">
+                            <img src="https://rukminim1.flixcart.com/image/832/832/xif0q/bed/u/t/g/king-2179-na-no-192-5-particle-board-yes-66-fk8019-flipkart-original-imaghsb7xfrrx7am.jpeg?q=70"
+                                alt="Image Can't Load">
+                        </div>
+                        <div class="contantbg">
+                            <div class="bn6-title">
+                                <div class="bn6-cp">
+                                    <p>Property</p>
+                                </div>
+                                <p style="margin: 0 16px 0 0 ">Flipkart Perfect Homes Waltz Engineered Wood King Box Bed
+                                </p>
+                            </div>
+                            <div class="bn6price">
+                                <p>₹15,899</p>
+                                <div class="ratingbg">
+                                    <img src="assets/image/ratingstar.png" alt="Image Can't Load">
+                                    <p>4.0</p>
+                                </div>
+                            </div>
+                            <div class="pdlocations">
+                                <div class="bn6lbg">
+                                    <img src="assets/image/bluelocationimage.png" alt="Image Can't Load">
+                                    <p>South District</p>
+                                </div>
+                                <div class="bg6sold">
+                                    <p>823 Sold</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner9">
+            <div class="r1">
+                <div class="bn9t1">
+                    <p>Now it's easier to open your shop</p>
+                    <p>With simple step by step and easy help instructions to follow</p>
+                </div>
+                <div class="bn9t2">
+                    <p>Open Shop</p>
+                    <img src="assets/image/rightwhiteicon.png" alt="Image Can't Load">
+
+                </div>
+            </div>
+            <div class="bn9hr"></div>
+            <div class="r2">
+                <p class="bn9tit">Brand & Categories</p>
+                <div class="rowbg">
+                    <div class="row">
+                        <p>Fashion Man</p>
+                        <p>Zeneta Fashion</p>
+                        <p>Xgard 304</p>
+                        <p>Never Star</p>
+                        <p>Rillingen Hood</p>
+                        <p>DropBrain</p>
+                        <p>Red Pride</p>
+                        <p>Onedry 1998</p>
+                        <p>Starclothing</p>
+                    </div>
+                    <div class="row">
+                        <p>Woman Fashion</p>
+                        <p>Fushion</p>
+                        <p>Aneta Glowing</p>
+                        <p>Amanda 19</p>
+                        <p>Kiosku</p>
+                        <p>Womandry</p>
+                        <p>Ababil</p>
+                        <p>Lowly Cloth</p>
+                    </div>
+                    <div class="row">
+                        <p>Automotive</p>
+                        <p>Star Label</p>
+                        <p>My Star</p>
+                        <p>Automotive 09</p>
+                        <p>Racedrag</p>
+                        <p>Speedone</p>
+                        <p>Racer Shop</p>
+                        <p>Bengkel Motor 22</p>
+                        <p>Speedy Race</p>
+                    </div>
+                    <div class="row">
+                        <p>Sports</p>
+                        <p>Extra time ID</p>
+                        <p>Football Boys</p>
+                        <p>Onesports</p>
+                        <p>Liveball.id</p>
+                        <p>Sport 17</p>
+                        <p>Ball Player</p>
+                        <p>Aneta Futboll</p>
+                    </div>
+                    <div class="row">
+                        <p>Accesories</p>
+                        <p>Antena</p>
+                        <p>Glimming</p>
+                        <p>Storeku</p>
+                        <p>Cempaka Store</p>
+                        <p>Memee.id</p>
+                    </div>
+                    <div class="row">
+                        <p>Gaming</p>
+                        <p>Stargame.id</p>
+                        <p>Dunia Games</p>
+                        <p>Vale Store</p>
+                        <p>Decade</p>
+                        <p>Deff Store</p>
+                        <p>Press Start.id</p>
+                    </div>
+                    <div class="row">
+                        <p>Electronic</p>
+                        <p>Plotion</p>
+                        <p>Green Shop</p>
+                        <p>Simsang</p>
+                        <p>Semea.Store</p>
+                        <p>Ximpling Store 99</p>
+                        <p>Bobby.id</p>
+                        <p>Chinly</p>
+                        <p>Store House</p>
+                    </div>
+                    <div class="row">
+                        <p>Property</p>
+                        <p>Green Property</p>
+                        <p>A-Naiku House</p>
+                        <p>Dentis World</p>
+                        <p>A Property</p>
+                        <p>Bolam.id</p>
+                        <p>Houseme.Store</p>
+                        <p>PAUSMEN</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bn9hr"></div>
+            <div class="banner9payment">
+                <p>Payment Method</p>
+                <div class="paycards">
+                    <div class="cardrow"></div>
+                    <div class="cardrow"></div>
+                    <div class="cardrow"></div>
+                    <div class="cardrow"></div>
+                    <div class="cardrow"></div>
+                    <div class="cardrow"></div>
+                    <div class="cardrow"></div>
+                    <div class="cardrow"></div>
+                    <div class="cardrow"></div>
+                </div>
+            </div>
+            <div class="r3">
+                <div class="r31">
+                    <p>Slabshop</p>
+                    <p>Aims to make it easier for every community in the world to carry out various buying and selling
+                        transactions online. Is
+                        one of the world's online buying and selling sites whose development is relatively fast. You can
+                        sell products online at
+                        the slabshop besides being able to enjoy the process of buying various products more quickly and
+                        effectively. You can
+                        sign up for the exclusive slabshop Seller community if you want to launch your own business.</p>
+                </div>
+                <div class="r32">
+                    <p>Advantages of joining Slabshop</p>
+                    <p>Festive advertising In addition to offering all available product categories, Slabshop also
+                        regularly runs attractive
+                        promotions with prices you can access on the promo page. There are many options for promotions
+                        with different validity
+                        periods for various products, from smartphone promotions to promotions for inexpensive train
+                        tickets. The process is
+                        also very simple; all you have to do is enter the current coupon code or promotional code for
+                        the item you want to buy.
+                        festive advertising In addition to offering all available product categories, Slabshop also
+                        regularly runs attractive
+                        promotions with prices you can access on the promo page. There are many options for promotions
+                        with different validity
+                        periods for various products, from smartphone promotions to promotions for inexpensive train
+                        tickets. The process is
+                        also very simple, Readmore</p>
+                </div>
+                <div class="bn9hr"></div>
+                <div class="r33">
+                    <p>Slabshop © 2021-2022, All Rights Reserved</p>
+                    <div class="r33footer">
+                        <p>Privacy Policy</p>
+                        <p>Terms Of Use</p>
+                        <p>FAQ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
